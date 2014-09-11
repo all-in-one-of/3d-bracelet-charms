@@ -41,7 +41,9 @@ def convert(fin, fout, binary=False):
   vertices = []
   faces = []
   for line in fin.readlines():
-    # todo: strip comments
+    # strip comments
+    if line[:1] == '#':
+      continue
     
     values = line.split()
     linetype, values = values[0], values[1:]
